@@ -1,0 +1,32 @@
+<div class="container mt-5">
+
+    <div *ngIf="!DifferentMode" style="text-align : center;">
+        <h1>api-app</h1>
+
+        <p class="lead">Manage storage </p>
+
+        <div class="text-center">
+            <button (click)="ModeToggle()" class="btn btn-primary btn-lg mr-2">Register-example</button>
+            <button class="btn btn-primary btn-lg mr-2">Add data</button>
+            <app-example></app-example>
+
+        </div>
+
+
+    </div>
+
+    <div>
+
+        <div *ngIf="DifferentMode" class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-4">
+
+                    <!-- this is how you add different components to other -->
+                    <app-register   (cancelRegister) = "cancelRegisterMode($event)"></app-register>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
